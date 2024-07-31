@@ -1,0 +1,175 @@
+import { aboutMe, navData, projectData, sliderData } from "./data";
+
+const navCenter = document.querySelector('.tech-stack') as HTMLDivElement
+const slider = document.querySelector('.slider') as HTMLElement
+const leftBtn = document.querySelector('.left-btn') as HTMLElement
+const rightBtn = document.querySelector('.right-btn') as HTMLElement
+const slideBtns: NodeListOf<HTMLDivElement> = document.querySelectorAll('.dot-btn')
+
+// load nav data
+
+
+const stacks = navData.map((item) => {
+  return `<div class="tech">
+<div class="dot"></div>
+<li><a href=${item.url}>${item.title}</a></li>
+</div>
+`
+}).join('')
+
+navCenter.innerHTML = stacks;
+
+
+//slider functionality
+
+const slides = sliderData.map((item,) => {
+  const { colour, title, img } = item;
+  return `<div class="slide"  style="background-color: ${colour};">
+          <div class="slide-content">
+          <h2>${title}</h2>
+          </div>
+    </div>`
+}).join('')
+
+slider.innerHTML = slides;
+
+const slideList: NodeListOf<HTMLElement> = document.querySelectorAll('.slide')
+
+let counter: number = 0;
+
+slideList.forEach(function (slide, index) {
+  slide.style.left = `${index * 100}%`;
+})
+
+
+
+leftBtn.addEventListener('click', function () {
+  counter = 0;
+  carousel(counter);
+})
+
+rightBtn.addEventListener('click', function () {
+  counter = 1;
+  carousel(counter);
+})
+
+//determines which carousel is displayed
+function carousel(position: number) {
+  slideList.forEach((slide, index) => {
+    slide.style.transform = `translateX(-${position * 100}%)`;
+    slide.style.transition = `1s`;
+  })
+}
+
+//automatically change slides every 5 seconds
+function changeSlide() {
+
+  const interval = setInterval(() => {
+    let randomIndex: number = Math.floor(Math.random() * 2);
+
+    carousel(randomIndex)
+    slideBtns.forEach((btn, index) => {
+      if (index === randomIndex) {
+        btn.classList.add('active-btn')
+      }
+    })
+    slideBtns.forEach((btn, index) => {
+      if (index !== randomIndex) {
+        btn.classList.remove('active-btn')
+      }
+    })
+
+  }, 5000)
+
+}
+
+changeSlide();
+
+
+
+
+//about section 
+const projectContainer = document.querySelector('.projects') as HTMLDivElement
+
+
+const projects = projectData.map((project) => {
+
+  const { id, url, github, img, description, text } = project;
+
+  return `
+   <div class="project">
+   <div class="img-container">
+   <img class="project-img" src=${img} alt="">
+   </div>
+   <div class="project-desc">
+         <h2>${text}</h2>
+    <div class="desc">
+      <p>${description}</p>
+      </div>
+     <div class="links">
+          <button class="link"><a href=${url} target="_blank">live site</a></button>
+          <button class="link"><a href=${github} target="_blank">source code</a></button>
+      </div>
+   </div>
+
+      <div class="overlay">
+      </div>
+   </div>
+  `
+}).join('')
+
+
+projectContainer.innerHTML = projects;
+
+
+//About content
+const aboutContent = document.querySelector('.about-content') as HTMLDivElement
+
+
+const person = aboutMe.map((me) => {
+  return `
+  <div class="overview">
+  <p>${me.overview}</p>
+  </div>
+   <div class="nationality boi-data">
+        <span class="">Nationality:</span>
+      <div class="details">
+        <p>${me.nationality}</p>
+      </div>
+  </div>
+   <div class="email boi-data">
+        <span>Email:</span>
+        <div class="details">
+        <p>${me.email}</p>
+        </div>
+  </div>
+     <div class="location boi-data">
+        <span>Location:</span>
+        <div class="details">
+        <p>${me.location}</p>
+        </div>
+  </div>
+
+    <div class="status boi-data">
+        <span>Marital status:</span>
+        <div class="details">
+        <p>${me.status}</p>
+        </div>
+  </div>
+
+  <div class="education boi-data">
+    <span>Education:</span>
+    <div class="details">
+        <p>${me.education}</p>
+    </div>
+  </div>
+  <div class="profession boi-data">
+    <span>professional experience:</span>
+    <div class="details">
+        <p>${me.experience}</p>
+      </div>
+  </div>
+  `
+}).join('')
+
+aboutContent.innerHTML = person;
