@@ -1,6 +1,6 @@
-import { aboutMe, navData, projectData, sliderData } from "./data";
+import { aboutMe, navData, projectData, skills, sliderData } from "./data";
 
-const navCenter = document.querySelector('.tech-stack') as HTMLDivElement
+const navCenter = document.querySelector('.nav-links') as HTMLDivElement
 const slider = document.querySelector('.slider') as HTMLElement
 const leftBtn = document.querySelector('.left-btn') as HTMLElement
 const rightBtn = document.querySelector('.right-btn') as HTMLElement
@@ -11,7 +11,6 @@ const slideBtns: NodeListOf<HTMLDivElement> = document.querySelectorAll('.dot-bt
 
 const stacks = navData.map((item) => {
   return `<div class="tech">
-<div class="dot"></div>
 <li><a href=${item.url}>${item.title}</a></li>
 </div>
 `
@@ -173,3 +172,21 @@ const person = aboutMe.map((me) => {
 }).join('')
 
 aboutContent.innerHTML = person;
+
+//skills section
+
+const skillContainer = document
+  .querySelector('.skill') as HTMLDivElement
+
+const skillData = skills.map((skill) => {
+  return `
+  <div>
+  <h2>${skill.title}</h2>
+  <div>
+  <p>${skill.description}</div>
+  </div>
+  </div>
+  `
+}).join('')
+
+skillContainer.innerHTML = skillData;

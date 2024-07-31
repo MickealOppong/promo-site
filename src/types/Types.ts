@@ -25,3 +25,10 @@ export type Project = {
   url: string
   description: string
 }
+
+
+export type Skill = {
+
+  title: string,
+  description: string
+}

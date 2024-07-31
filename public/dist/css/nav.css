@@ -1,3 +1,26 @@
+nav {
+  display: flex;
+  align-items: center;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-transform: capitalize;
+  color: var(---primary);
+}
+
+.fixed nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -8,7 +31,7 @@
 }
 
 .profile-img {
-  display: inline;
+  display: none;
 }
 
 .profile-img img {
@@ -40,7 +63,7 @@ nav {
   align-items: center;
 }
 
-.tech-stack {
+.nav-links {
   display: flex;
   align-items: center;
   column-gap: 1rem;
@@ -48,9 +71,12 @@ nav {
 
 .tech {
   display: flex;
+  flex-direction: column;
   align-items: center;
   column-gap: 0.5rem;
+
 }
+
 
 .dot {
   width: 10px;
@@ -58,11 +84,21 @@ nav {
   background-color: var(---secondary);
 }
 
+.underline {
+  width: 4rem;
+  height: 2px;
+  background-color: var(---accent);
+}
 
 @media screen and (min-width:1092px) {
 
-  .tech-stack {
+  .nav-links {
     display: flex;
     flex-direction: row;
   }
+
+  .profile-img {
+    display: inline;
+  }
+
 }

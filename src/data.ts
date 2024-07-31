@@ -1,7 +1,7 @@
 //import cms from '../public/assets/cms.png'
 //import landingPage from '../public/assets/landing-page.png'
 //import store from '../public/assets/store.png'
-import { About, Project, Slider } from './types/Types'
+import { About, Project, Skill, Slider } from './types/Types'
 
 export const techStack = [
   { id: 1, text: 'Java' },
@@ -23,15 +23,40 @@ export const navData = [
   },
   {
     title: 'about mike',
-    url: 'about.html'
+    url: '#about'
+  },
+  {
+    title: 'Skills',
+    url: '#skills'
   },
 ]
 
 
+export const skills: Skill[] = [
+
+  {
+
+    title: 'web development',
+    description: ''
+  },
+
+
+  {
+
+    title: 'professional experience',
+    description: ''
+  },
+
+  {
+    title: 'Finance and Accounting knowledge',
+    description: ''
+  }
+]
+
 export const projectData: Project[] = [
   {
     id: 1,
-    img: '../public/assets/e-cms.png',
+    img: '../assets/e-cms.png',
     text: 'e-commerce-Admin dashboard',
     github: 'https://github.com/MickealOppong/cms-backend-api',
     url: 'https://e-cms.netlify.app/landing',
@@ -40,7 +65,7 @@ export const projectData: Project[] = [
 
   {
     id: 2,
-    img: '../public/assets/store.png',
+    img: '../assets/store.png',
     text: 'e-commerce store',
     github: 'https://github.com/MickealOppong/store',
     url: 'https://react-seahorse.netlify.app',
@@ -49,7 +74,7 @@ export const projectData: Project[] = [
   },
   {
     id: 3,
-    img: '../public/assets/landing-page.png',
+    img: '../assets/landing-page.png',
     text: 'e-commerce-landing page',
     github: 'https://github.com/MickealOppong/Fashion-Landing-Page',
     url: 'https://seahorse-land-page.netlify.app',
@@ -71,7 +96,7 @@ export const sliderData: Slider[] = [
 ]
 
 export const aboutMe: About[] = [{
-  overview: "My name is Michael Oppong, I am a graduate of MA Finance from University of Economics in Katowice, i hold a Bachelor of laws degree. I am married and a father who enjoys creating web applications. I love what i do and i do what i love My journey to software development was influence by my previous work experience in a software company where i was involved in design and implementation of functional requirements for Enterprise Resource Applications.I have over five years experience working with developers to design and implement Enterprice Resource Applications (ERP) for large corporations.Through this period i learnt how to write snippets of code.I loved it and had fun doing it.With the vast knowledge and experience over the years, i feel i am in a unique position to deliver solutions to client in a way that incorporate business understanding and not just technology",
+  overview: "My name is Michael Oppong, a graduate of MA Finance from University of Economics in Katowice, i hold a Bachelor of laws degree. I am married and a father who enjoys creating web applications. I love what i do and i do what i love My journey to software development was influence by my previous work experience in a software company where i was involved in design and implementation of functional requirements for Enterprise Resource Applications.I have over five years experience working with developers to design and implement Enterprice Resource Applications (ERP) for large corporations.Through this period i learnt how to write snippets of code.I loved it and had fun doing it.With the vast knowledge and experience over the years, i feel i am in a unique position to deliver solutions to client in a way that incorporate business understanding and not just technology",
   name: 'Michael Oppong',
   email: 'mikel.oppon@gmail.com',
   nationality: 'Ghana',

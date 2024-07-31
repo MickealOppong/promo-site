@@ -13,7 +13,7 @@
   ---maxW-2: 80vw;
   ---bg-1: rgba(233, 236, 237, 0.4);
 
-  ---bg-2: rgba(233, 236, 237, 1);
+  ---bg-2: rgb(234, 238, 239);
 }
 
 ul {
@@ -24,10 +24,15 @@ a {
   text-decoration: none;
 }
 
+
+html {
+
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 
@@ -126,7 +131,8 @@ body {
 
 
 .demo-header,
-.about-header {
+.about-header,
+.skills-header {
   display: flex;
   width: 100%;
   max-width: var(---maxW-2);
@@ -257,7 +263,7 @@ body {
   display: flex;
   width: 80vw;
   text-align: justify;
-
+  margin-bottom: 2rem;
 }
 
 .overview p {
@@ -278,6 +284,7 @@ body {
 .details {
   display: flex;
   width: 50vw;
+
 }
 
 @media screen and (min-width:800px) {
