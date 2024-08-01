@@ -37,19 +37,22 @@ export const skills: Skill[] = [
   {
 
     title: 'web development',
-    description: ''
+    icon: 'las la-code',
+    description: 'Proficient in backend technologies such as Java and Spring framework for building back-end of a web application. Also proficient with Javascript, HTML & CSS, Typescript and Accompanying React framework for building front-end applications. As demonstrated with the demo projects, i can contribute to any team in the development of web application and its workflows.'
   },
 
 
   {
 
     title: 'professional experience',
-    description: ''
+    icon: 'las la-briefcase',
+    description: 'Good communication skills, building of interpersonal relationship and team first approach are some of the skills i have gained over the years and i holistically believe this will be valuable to any development team. '
   },
 
   {
-    title: 'Finance and Accounting knowledge',
-    description: ''
+    title: 'Finance knowledge',
+    icon: 'las la-chart-line',
+    description: 'Coming from a Finance and Accounting background, i posses the skills to understand business requirement and also the ability to communicate it to non-finance or accounting professionals. I will be able to add value to the team and client beyond coding in the areas of workflows and process-flows'
   }
 ]
 

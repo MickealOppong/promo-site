@@ -180,9 +180,12 @@ const skillContainer = document
 
 const skillData = skills.map((skill) => {
   return `
-  <div>
-  <h2>${skill.title}</h2>
-  <div>
+  <div class="skill-content">
+  <div class="skill-title">
+  <i class="${skill.icon}"></i>
+  <p>${skill.title}</p>
+  </div>
+  <div class="skill-desc">
   <p>${skill.description}</div>
   </div>
   </div>
@@ -190,3 +193,9 @@ const skillData = skills.map((skill) => {
 }).join('')
 
 skillContainer.innerHTML = skillData;
+
+
+//footer
+const yearElem = document.querySelector('.year') as Element
+
+yearElem.textContent = new Date().getFullYear().toString();
