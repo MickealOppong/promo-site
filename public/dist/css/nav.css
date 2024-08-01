@@ -1,6 +1,7 @@
 nav {
   display: flex;
   align-items: center;
+  height: 4rem;
 }
 
 
@@ -28,6 +29,8 @@ a {
 
 .logo {
   color: var(---primary);
+  cursor: pointer;
+  text-transform: lowercase;
 }
 
 .profile-img {
@@ -77,6 +80,9 @@ nav {
 
 }
 
+.tech li {
+  cursor: pointer;
+}
 
 .dot {
   width: 10px;

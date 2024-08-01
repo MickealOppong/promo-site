@@ -136,7 +136,7 @@ body {
   display: flex;
   width: 100%;
   max-width: var(---maxW-2);
-  margin: 3rem auto;
+  margin: 2rem auto;
   text-transform: capitalize;
   color: var(---primary);
   font-weight: 100;
@@ -148,7 +148,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: var(---maxW-2);
-  margin: 2rem auto;
+  margin: 0 auto;
   gap: 2rem;
 
 }
@@ -264,7 +264,6 @@ body {
   display: flex;
   width: 80vw;
   text-align: justify;
-
 }
 
 .overview p {
@@ -293,7 +292,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(---bg-2);
-  height: 80vh;
+  height: auto;
 }
 
 
@@ -306,6 +305,8 @@ body {
   column-gap: 2rem;
   width: 100%;
 
+  margin-bottom: 4rem;
+
 }
 
 .skill-content {
@@ -314,6 +315,7 @@ body {
   align-items: center;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   background-color: var(---white);
+
 }
 
 .skill-title {

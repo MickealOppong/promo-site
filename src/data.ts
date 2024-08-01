@@ -15,19 +15,19 @@ export const techStack = [
 export const navData = [
   {
     title: 'home',
-    url: '#home'
+    url: ''
   },
   {
     title: 'demo-project',
-    url: '#demo-project'
+    url: ''
   },
   {
     title: 'about mike',
-    url: '#about'
+    url: 't'
   },
   {
     title: 'Skills',
-    url: '#skills'
+    url: ''
   },
 ]
 
@@ -99,13 +99,13 @@ export const sliderData: Slider[] = [
 ]
 
 export const aboutMe: About[] = [{
-  overview: "My name is Michael Oppong, a graduate of MA Finance from University of Economics in Katowice, i hold a Bachelor of laws degree. I am married and a father who enjoys creating web applications. I love what i do and i do what i love My journey to software development was influence by my previous work experience in a software company where i was involved in design and implementation of functional requirements for Enterprise Resource Applications.I have over five years experience working with developers to design and implement Enterprice Resource Applications (ERP) for large corporations.Through this period i learnt how to write snippets of code.I loved it and had fun doing it.With the vast knowledge and experience over the years, i feel i am in a unique position to deliver solutions to client in a way that incorporate business understanding and not just technology",
+  overview: "My name is Michael Oppong, a graduate of MA Finance from University of Economics in Katowice, i hold a Bachelor of laws degree. I am married and a father who enjoys creating web applications. I love what i do and i do what i love My journey to software development was influence by my previous work experience in a software company where i was involved in design and implementation of functional requirements for Enterprise Resource Applications. I have over five years experience working with developers to design and implement Enterprice Resource Applications (ERP) for large corporations. Through out this period i learnt how to write snippets of code.I loved it and had fun doing it.With the vast knowledge and experience over the years, i feel i am in a unique position to deliver solutions to client in a way that incorporate business understanding and not just technology",
   name: 'Michael Oppong',
   email: 'mikel.oppon@gmail.com',
   nationality: 'Ghana',
   location: 'Lodzkie, Leonow, Wolborz gmina',
   status: 'Married',
   education: ['Bachelor of laws,Masters in finance ,MBA accounting & Finance'],
-  experience: ['5 years experience as Software implementer working and collaborating with end users and developers to provide accounting solutions', '8 plus years of experience in Financial Auditing ,Budgeting and Corporate reporting and accounting']
+  experience: ['5 years experience as Software implementer working and collaborating with end users and developers to provide accounting solutions', ' 8 plus years of experience in Financial Auditing , Budgeting and Corporate reporting and accounting']
 }
 ]

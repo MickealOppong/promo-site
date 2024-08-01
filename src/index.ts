@@ -6,17 +6,86 @@ const leftBtn = document.querySelector('.left-btn') as HTMLElement
 const rightBtn = document.querySelector('.right-btn') as HTMLElement
 const slideBtns: NodeListOf<HTMLDivElement> = document.querySelectorAll('.dot-btn')
 
+
+
 // load nav data
 
 
 const stacks = navData.map((item) => {
   return `<div class="tech">
-<li><a href=${item.url}>${item.title}</a></li>
+<li><a>${item.title}</a></li>
 </div>
 `
 }).join('')
 
 navCenter.innerHTML = stacks;
+
+//set nav to fixed after 60px of scroll
+
+const nav = document.querySelector('nav') as HTMLDivElement
+
+const navHeight = nav.getBoundingClientRect().height;
+console.log('nav', nav.getBoundingClientRect());
+
+
+window.addEventListener('scroll', function () {
+  const windowHeight = window.scrollY;
+
+  if (windowHeight > navHeight) {
+
+    nav.style.position = "fixed"
+    nav.style.top = '0'
+    nav.style.left = '0'
+    nav.style.right = '0'
+    nav.style.zIndex = '300'
+  }
+
+})
+
+//scroll bavahiour
+const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.tech');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', function () {
+    const elem = link.firstElementChild?.textContent?.toLocaleLowerCase();
+    if (elem) {
+
+      const elemContainer = document.getElementById(`${elem}`)
+      const dim = elemContainer?.getBoundingClientRect();
+
+
+
+      let counter = 0;
+
+      window.scrollTo({
+        top: dim?.top,
+        left: 0,
+        behavior: 'smooth'
+      })
+
+      /*
+
+
+            const interval = setInterval(() => {
+              window.scrollTo({
+                top: dim?.top,
+                left: 0,
+                behavior: 'smooth'
+              })
+              if (counter > 100) {
+                clearInterval(interval);
+              }
+      
+              counter = counter + 5;
+            }, 20)
+      */
+
+    }
+  })
+
+
+})
+
 
 
 //slider functionality
