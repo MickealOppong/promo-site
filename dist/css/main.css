@@ -454,6 +454,7 @@ header {
 }
 
 .skill-title i {
+  display: none;
   color: var(---secondary);
 }
 
@@ -522,6 +523,11 @@ footer p {
 
   .slide-Btns {
     left: 20%;
+
+  }
+
+  .skill-title i {
+    display: flex;
 
   }
 
