@@ -246,29 +246,6 @@ header {
 
 
 
-.container-1 {
-  width: 8rem;
-  height: 2rem;
-  background-color: #212e53;
-}
-
-.container-2 {
-  width: 4rem;
-  height: 10rem;
-  background-color: green;
-}
-
-.container-3 {
-  width: 2rem;
-  height: 9rem;
-  background-color: red;
-}
-
-.container-4 {
-  width: 8rem;
-  height: 2rem;
-  background-color: yellow;
-}
 
 .demo-projects {
   display: flex;
@@ -360,14 +337,19 @@ header {
 
 
 .link {
-  background-color: var(---black);
+  background-color: var(---primary);
   border-color: transparent;
+  border: var(---hero) solid 2px;
   width: 8rem;
   height: 2rem;
 }
 
 .link a {
   color: var(---white);
+}
+
+.link:hover {
+  background-color: var(---hero);
 }
 
 .overlay {

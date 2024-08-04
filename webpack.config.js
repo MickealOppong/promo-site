@@ -21,7 +21,11 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
-
+      {
+        test: /\.webp?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ]
   },
   resolve: {
