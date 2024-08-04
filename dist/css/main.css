@@ -339,7 +339,6 @@ header {
 .link {
   background-color: var(---primary);
   border-color: transparent;
-  border: var(---hero) solid 2px;
   width: 8rem;
   height: 2rem;
 }
