@@ -59,7 +59,7 @@ export const skills: Skill[] = [
 export const projectData: Project[] = [
   {
     id: 1,
-    img: '../dist/assets/e-cms.png',
+    img: './assets/e-cms.png',
     text: 'e-commerce-Admin dashboard',
     github: 'https://github.com/MickealOppong/cms-backend-api',
     url: 'https://e-cms.netlify.app/landing',
@@ -68,7 +68,7 @@ export const projectData: Project[] = [
 
   {
     id: 2,
-    img: '../dist/assets/landing-page.png',
+    img: './assets/landing-page.png',
     text: 'e-commerce store',
     github: 'https://github.com/MickealOppong/store',
     url: 'https://react-seahorse.netlify.app',
@@ -77,7 +77,7 @@ export const projectData: Project[] = [
   },
   {
     id: 3,
-    img: '../dist/assets/store.png',
+    img: './assets/store.png',
     text: 'e-commerce-landing page',
     github: 'https://github.com/MickealOppong/Fashion-Landing-Page',
     url: 'https://seahorse-land-page.netlify.app',
