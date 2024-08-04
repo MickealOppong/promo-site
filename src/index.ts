@@ -1,4 +1,4 @@
-import { aboutMe, navData, projectData, skills, sliderData } from "./data";
+import { aboutMe, navData, projectData, skills } from "./data";
 
 const navCenter = document.querySelector('.nav-links') as HTMLDivElement
 const slider = document.querySelector('.slider') as HTMLElement
@@ -20,86 +20,83 @@ const stacks = navData.map((item) => {
 
 navCenter.innerHTML = stacks;
 
-//set nav to fixed after 60px of scroll
-
-const nav = document.querySelector('nav') as HTMLDivElement
-
-const navHeight = nav.getBoundingClientRect().height;
-console.log('nav', nav.getBoundingClientRect());
+//set nav to fixed after & scroll behaviour
 
 
 window.addEventListener('scroll', function () {
+  const nav = document.querySelector('.nav') as HTMLElement
+  const slideBtns = document.querySelector('.slide-btns') as HTMLElement
+
+  const navHeight = nav.getBoundingClientRect().height;
+
   const windowHeight = window.scrollY;
 
-  if (windowHeight > navHeight) {
 
-    nav.style.position = "fixed"
-    nav.style.top = '0'
-    nav.style.left = '0'
-    nav.style.right = '0'
-    nav.style.zIndex = '300'
+  if (windowHeight > navHeight) {
+    nav.classList.add('fixed')
+    slideBtns.style.top = '72%'
+  } else {
+    slideBtns.style.top = '80%'
+    nav.classList.remove('fixed')
   }
+
+
 
 })
 
-//scroll bavahiour
-const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.tech');
 
+const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.tech');
+const nav = document.querySelector('.nav') as HTMLElement
+const navHeight = nav.getBoundingClientRect().height;
 navLinks.forEach((link) => {
   link.addEventListener('click', function () {
     const elem = link.firstElementChild?.textContent?.toLocaleLowerCase();
+
     if (elem) {
 
       const elemContainer = document.getElementById(`${elem}`)
       const dim = elemContainer?.getBoundingClientRect();
 
-
-
-      let counter = 0;
-
-      window.scrollTo({
-        top: dim?.top,
+      let top = dim?.top ? dim.top - navHeight : 0;
+      window.scrollBy({
+        top: top,
         left: 0,
         behavior: 'smooth'
       })
 
-      /*
-
-
-            const interval = setInterval(() => {
-              window.scrollTo({
-                top: dim?.top,
-                left: 0,
-                behavior: 'smooth'
-              })
-              if (counter > 100) {
-                clearInterval(interval);
-              }
-      
-              counter = counter + 5;
-            }, 20)
-      */
-
     }
   })
-
 
 })
 
 
-
 //slider functionality
-
+/*
 const slides = sliderData.map((item,) => {
-  const { colour, title, img } = item;
-  return `<div class="slide"  style="background-color: ${colour};">
+  const { colour, msg, title, img } = item;
+  if (img) {
+    return `<div class="slide"  style="background-color: ${colour};">
+          <div class="slide-content">
+          <p>${title}</p>
+          </div>
+        <div class="msg-container">
+        <img src=${item.img} />
+       </div>
+    </div>`
+  } else {
+    return `<div class="slide"  style="background-color: ${colour};">
           <div class="slide-content">
           <h2>${title}</h2>
           </div>
+        <div class="msg-container">
+        <p>${msg}</p>
+       </div>
     </div>`
+  }
 }).join('')
 
 slider.innerHTML = slides;
+
 
 const slideList: NodeListOf<HTMLElement> = document.querySelectorAll('.slide')
 
@@ -154,7 +151,21 @@ function changeSlide() {
 changeSlide();
 
 
+*/
 
+
+//dot comtainer position
+
+const dotContainer = document.querySelector('.dot-container') as HTMLElement
+
+window.addEventListener('mousemove', function (e) {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  dotContainer.style.position = 'absolute'
+  dotContainer.style.top = `${y}`;
+  dotContainer.style.left = `${x}`;
+})
 
 //about section 
 const projectContainer = document.querySelector('.projects') as HTMLDivElement
@@ -211,6 +222,12 @@ const person = aboutMe.map((me) => {
         <p>${me.email}</p>
         </div>
   </div>
+     <div class="tel boi-data">
+        <span>Telephone:</span>
+        <div class="details">
+        <p>${me.telephone}</p>
+        </div>
+  </div>
      <div class="location boi-data">
         <span>Location:</span>
         <div class="details">
@@ -219,7 +236,7 @@ const person = aboutMe.map((me) => {
   </div>
 
     <div class="status boi-data">
-        <span>Marital status:</span>
+        <span>Civil status:</span>
         <div class="details">
         <p>${me.status}</p>
         </div>

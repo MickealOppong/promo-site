@@ -3,18 +3,19 @@
   ---secondary: #4a919e;
   ---accent: #212e53;
   ---gray: rgb(2, 62, 114);
+  ---hero: rgb(125, 154, 162);
   ---white: white;
   ---black: black;
-  ---large: 3rem;
+  ---large: 5rem;
   ---small: 1rem;
   ---medium: 2rem;
   ---spacing: 0.5px;
   ---maxW-1: 90vw;
   ---maxW-2: 80vw;
   ---bg-1: rgba(233, 236, 237, 0.4);
-
   ---bg-2: rgb(234, 238, 239);
 }
+
 
 ul {
   list-style: none;
@@ -26,15 +27,25 @@ a {
 
 
 html {
-
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+header {
+  background-color: var(---hero);
+  background-image: url('../../assets/hero-7.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+}
 
 .slider {
   position: relative;
@@ -53,20 +64,19 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-
 }
 
 
 .slide-Btns {
   position: absolute;
-  top: 70%;
-  left: 20%;
-  display: flex;
+  top: 80%;
+  right: 20%;
+  display: none;
 }
 
 .left-btn,
 .right-btn {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 30px;
@@ -76,12 +86,40 @@ body {
   border-color: transparent;
 }
 
+.dot-container {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  transition: 0.1s;
+  background-color: transparent;
+  border-color: transparent;
+
+  border: var(---primary) solid 2px;
+  border-radius: 50%;
+  animation: expand 3s linear infinite;
+}
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   background-color: var(---secondary);
   border-radius: 50%;
+}
+
+
+@keyframes expand {
+  from {
+    transform: scale(1.0);
+  }
+
+  to {
+    transform: scale(2);
+  }
 }
 
 .active-btn {
@@ -92,16 +130,26 @@ body {
 
 .slide-content {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 10%;
   display: flex;
   flex-direction: column;
-
 }
 
+.msg-container {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  width: 40rem;
+  height: 15rem;
+  display: none;
+}
 
+.msg-container h2 {
+  line-height: 2rem;
+}
 
-.slide-content h2 {
+.slide-content p {
   font-size: var(---large);
   line-height: 4rem;
   color: var(---gray);
@@ -121,12 +169,112 @@ body {
   height: 5rem;
 }
 
+.hero-container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  min-height: 80vh;
 
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: var(---maxW-1);
+  margin: 2rem auto;
+  width: 100%;
+}
+
+
+
+.hero-desc {
+  display: flex;
+  flex-direction: column;
+  column-gap: 1rem;
+  width: 20rem;
+  padding: 0 0.5rem;
+}
+
+.hero-desc h2 {
+  font-size: var(---small);
+  font-weight: 500;
+  color: var(---white);
+}
+
+.hero-desc h2 strong {
+  font-size: var(---medium);
+  color: rgb(172, 39, 39);
+}
+
+.hero-desc p {
+  color: var(---white);
+  font-size: var(---medium);
+  font-weight: 400;
+}
+
+.hero-img {
+  position: relative;
+  display: flex;
+}
+
+.hero-img img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+
+.me-btn {
+  width: 8rem;
+  height: 3rem;
+  background-color: transparent;
+  border-color: transparent;
+  border: #985277 solid 2px;
+  text-transform: uppercase;
+  transition: 1s;
+}
+
+.me-btn:hover {
+  background-color: var(---primary);
+  border-color: transparent;
+  color: var(---white);
+  font-size: var(---small);
+  transition: 1s;
+}
+
+
+
+.container-1 {
+  width: 8rem;
+  height: 2rem;
+  background-color: #212e53;
+}
+
+.container-2 {
+  width: 4rem;
+  height: 10rem;
+  background-color: green;
+}
+
+.container-3 {
+  width: 2rem;
+  height: 9rem;
+  background-color: red;
+}
+
+.container-4 {
+  width: 8rem;
+  height: 2rem;
+  background-color: yellow;
+}
 
 .demo-projects {
   display: flex;
   flex-direction: column;
-  background-color: var(---bg-1)
+  background-color: var(---bg-1);
+
 }
 
 
@@ -138,7 +286,7 @@ body {
   max-width: var(---maxW-2);
   margin: 2rem auto;
   text-transform: capitalize;
-  color: var(---primary);
+  color: var(---black);
   font-weight: 100;
 }
 
@@ -149,8 +297,8 @@ body {
   flex-direction: column;
   max-width: var(---maxW-2);
   margin: 0 auto;
-  gap: 2rem;
-
+  gap: 1rem;
+  margin-bottom: 4rem;
 }
 
 .project {
@@ -250,7 +398,6 @@ body {
 
 .about {
   color: rgb(90, 104, 108);
-
 }
 
 .about-content {
@@ -258,6 +405,7 @@ body {
   flex-direction: column;
   max-width: var(---maxW-2);
   margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .overview {
@@ -274,7 +422,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .boi-data span {
@@ -284,7 +431,6 @@ body {
 .details {
   display: flex;
   width: 50vw;
-
 }
 
 
@@ -304,7 +450,6 @@ body {
   margin: 0 auto;
   column-gap: 2rem;
   width: 100%;
-
   margin-bottom: 4rem;
 
 }
@@ -315,7 +460,6 @@ body {
   align-items: center;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   background-color: var(---white);
-
 }
 
 .skill-title {
@@ -330,7 +474,6 @@ body {
 
 .skill-title i {
   color: var(---secondary);
-
 }
 
 
@@ -356,7 +499,6 @@ footer {
 }
 
 footer p {
-
   margin-left: 1rem;
 }
 
@@ -387,13 +529,19 @@ footer p {
 
   .desc {
     height: auto;
-
   }
 
   .links {
     position: absolute;
     top: 40%;
     left: 10%;
+  }
+
+
+
+  .slide-Btns {
+    left: 20%;
+
   }
 
 
@@ -416,4 +564,20 @@ footer p {
     height: auto
   }
 
+  .msg-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+  }
+
+  .hero-img {
+    display: flex;
+    width: 40%;
+    height: 30rem;
+  }
 }
