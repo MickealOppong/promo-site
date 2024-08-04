@@ -1,9 +1,6 @@
 //import cms from '../public/assets/cms.png'
 //import landingPage from '../public/assets/landing-page.png'
 //import store from '../public/assets/store.png'
-import img1 from '../dist/assets/e-cms.png'
-import img3 from '../dist/assets/landing-page.png'
-import img2 from '../dist/assets/store.png'
 import { About, Project, Skill, Slider } from './types/Types'
 
 export const techStack = [
@@ -62,7 +59,7 @@ export const skills: Skill[] = [
 export const projectData: Project[] = [
   {
     id: 1,
-    img: img1,
+    img: '../dist/assets/e-cms.png',
     text: 'e-commerce-Admin dashboard',
     github: 'https://github.com/MickealOppong/cms-backend-api',
     url: 'https://e-cms.netlify.app/landing',
@@ -71,7 +68,7 @@ export const projectData: Project[] = [
 
   {
     id: 2,
-    img: img2,
+    img: '../dist/assets/landing-page.png',
     text: 'e-commerce store',
     github: 'https://github.com/MickealOppong/store',
     url: 'https://react-seahorse.netlify.app',
@@ -80,7 +77,7 @@ export const projectData: Project[] = [
   },
   {
     id: 3,
-    img: img3,
+    img: '../dist/assets/store.png',
     text: 'e-commerce-landing page',
     github: 'https://github.com/MickealOppong/Fashion-Landing-Page',
     url: 'https://seahorse-land-page.netlify.app',
