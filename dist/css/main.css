@@ -39,7 +39,7 @@ body {
 
 header {
   background-color: var(---hero);
-  background-image: url('../../public/assets/hero-7.webp');
+  background-image: url('../assets/hero-7.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
